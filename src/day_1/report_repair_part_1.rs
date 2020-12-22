@@ -1,7 +1,7 @@
 use std::fs;
 
 pub fn run() {
-    let contents = fs::read_to_string("src/day_1/report_repair.txt")
+    let contents = fs::read_to_string("src/day_1/input.txt")
         .expect("Something went wrong reading the file");
     let values: Vec<&str> = contents.split("\n").collect();
     let mut count = 0;
