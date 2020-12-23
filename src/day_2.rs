@@ -1,1 +1,1 @@
-pub mod password_philosophy;
+pub mod password_philosophy_part_1;
