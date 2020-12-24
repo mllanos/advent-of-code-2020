@@ -34,5 +34,5 @@ pub fn run() {
 
         print!("Right {}, down {}: we hit {} trees.\n", right, down, count);
     }
-    print!("Multiplying all the values give us {}.\n", total);
+    print!("Multiplying all the values gives us {}.\n", total);
 }
