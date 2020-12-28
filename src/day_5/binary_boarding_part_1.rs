@@ -12,8 +12,8 @@ pub fn run() {
             'R' => '1',
             _ => x
         }).collect();
-    let passes: Vec<Vec<isize>> = content.split("\n")
-        .map(|x| x.trim().as_bytes().chunks(7).map(str::from_utf8).map(|a| isize::from_str_radix(a.unwrap(), 2)).collect::<Result<Vec<isize>, _>>().unwrap())
+    let passes: Vec<Vec<isize>> = content.lines()
+        .map(|x| x.as_bytes().chunks(7).map(str::from_utf8).map(|a| isize::from_str_radix(a.unwrap(), 2)).collect::<Result<Vec<isize>, _>>().unwrap())
         .collect::<Vec<Vec<isize>>>();
     let mut max_seat_id = 0;
     for pass in passes.iter() {

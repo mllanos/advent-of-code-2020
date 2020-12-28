@@ -3,7 +3,7 @@ use std::fs;
 pub fn run() {
     let contents = fs::read_to_string("src/day_1/input.txt")
         .expect("Something went wrong reading the file");
-    let values: Vec<&str> = contents.split("\n").collect();
+    let values: Vec<&str> = contents.lines().collect();
     let mut count = 0;
     for (i, x) in values.iter().enumerate() {
         let a: i32 = x.parse().unwrap();

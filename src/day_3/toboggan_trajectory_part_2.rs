@@ -3,8 +3,8 @@ use std::fs;
 pub fn run() {
     let contents = fs::read_to_string("src/day_3/input.txt")
         .expect("Something went wrong reading the file");
-    let values: Vec<&str> = contents.split("\n").collect();
-    let max_cols = values.first().unwrap().len() - 1;
+    let values: Vec<&str> = contents.lines().collect();
+    let max_cols = values.first().unwrap().len();
     let max_rows = values.len() - 1;
     let mut total: u64 = 1;
     let slope_strategies = [(1,1), (3,1), (5,1), (7,1), (1,2)];

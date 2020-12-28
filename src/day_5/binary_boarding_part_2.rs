@@ -13,8 +13,8 @@ pub fn run() {
             'R' => '1',
             _ => x
         }).collect();
-    let seat_ids: Vec<isize> = content.split("\n")
-        .map(|x| x.trim().as_bytes().chunks(7).map(str::from_utf8).map(|a| isize::from_str_radix(a.unwrap(), 2)).collect::<Result<Vec<isize>, _>>().unwrap())
+    let seat_ids: Vec<isize> = content.lines()
+        .map(|x| x.as_bytes().chunks(7).map(str::from_utf8).map(|a| isize::from_str_radix(a.unwrap(), 2)).collect::<Result<Vec<isize>, _>>().unwrap())
         .map(|x| x[0] * 8 + x[1])
         .collect::<Vec<isize>>()
         .into_iter().sorted().collect();
