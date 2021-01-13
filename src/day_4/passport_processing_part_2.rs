@@ -34,5 +34,5 @@ pub fn run() {
             matches = matches + 1;
         }
     }
-    print!("Out of {} passports, {} are valid.\n", passports.len(), matches);
+    println!("Out of {} passports, {} are valid.", passports.len(), matches);
 }

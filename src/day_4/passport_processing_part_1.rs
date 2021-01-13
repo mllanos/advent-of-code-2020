@@ -2,8 +2,13 @@ use std::fs;
 use std::str;
 use regex::Regex;
 
-pub fn run() {
-    let content = fs::read_to_string("src/day_4/input.txt").unwrap();
+#[test]
+fn validate() {
+    assert_eq!(algorithm("src/day_4/input_test.txt"), (4, 2));
+}
+
+fn algorithm(file_location: &str) -> (usize, isize) {
+    let content = fs::read_to_string(file_location).unwrap();
     let delimiter = Regex::new("\n\\s+\n").unwrap();
     let passports: Vec<&str> = delimiter.split(&content).collect();
     let keys = ["byr", "iyr", "eyr", "hgt", "hcl", "ecl", "pid"];
@@ -13,5 +18,10 @@ pub fn run() {
             matches = matches + 1;
         }
     }
-    print!("Out of {} passports, {} are valid.\n", passports.len(), matches);
+    (passports.len(), matches)
+}
+
+pub fn run() {
+    let (passports, valid) = algorithm("src/day_4/input.txt");
+    println!("Out of {} passports, {} are valid.", passports, valid);
 }
