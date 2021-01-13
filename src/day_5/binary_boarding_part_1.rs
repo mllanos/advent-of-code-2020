@@ -1,9 +1,14 @@
 use std::fs;
 use std::str;
 
-pub fn run() {
+#[test]
+fn validate() {
+    assert_eq!(algorithm("src/day_5/input_test.txt"), 357);
+}
+
+fn algorithm(file_location: &str) -> isize {
     // F,L -> 0, B,R -> 1
-    let content: std::string::String = fs::read_to_string("src/day_5/input.txt").unwrap()
+    let content: std::string::String = fs::read_to_string(file_location).unwrap()
         .chars()
         .map(|x| match x { 
             'F' => '0',
@@ -22,5 +27,9 @@ pub fn run() {
             max_seat_id = seat_id;
         }
     }
-    print!("The highest seat ID on the boarding pass is {}.\n", max_seat_id);
+    max_seat_id
+}
+
+pub fn run() {
+    println!("The highest seat ID on the boarding pass is {}.", algorithm("src/day_5/input.txt"));
 }

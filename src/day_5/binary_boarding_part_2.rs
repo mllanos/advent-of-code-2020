@@ -21,7 +21,7 @@ pub fn run() {
     let mut previous_seat: isize = 0;
     for &seat_id in seat_ids.iter() {
         if seat_id - previous_seat == 2 {
-            print!("My seat ID is {}.\n", seat_id - 1);   
+            println!("My seat ID is {}.", seat_id - 1);   
         }
         previous_seat = seat_id;
     }
