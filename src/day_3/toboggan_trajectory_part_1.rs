@@ -1,8 +1,12 @@
 use std::fs;
 
-pub fn run() {
-    let contents = fs::read_to_string("src/day_3/input.txt")
-        .expect("Something went wrong reading the file");
+#[test]
+fn validate() {
+    assert_eq!(algorithm("src/day_3/input_test.txt"), 7);
+}
+
+fn algorithm(file_location: &str) -> usize {
+    let contents = fs::read_to_string(file_location).unwrap();
     let values: Vec<&str> = contents.lines().collect();
     let max_cols = values.first().unwrap().len();
     let mut count = 0;
@@ -15,5 +19,10 @@ pub fn run() {
         }
         curr_col = (curr_col + 3) % max_cols;
     }
-    print!("Right 3, down 1: we hit {} trees.\n", count);
+    
+    count
+}
+
+pub fn run() {
+    println!("Right 3, down 1: we hit {} trees.", algorithm("src/day_3/input.txt"));
 }
