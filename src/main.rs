@@ -5,6 +5,7 @@ mod day_2;
 mod day_3;
 mod day_4;
 mod day_5;
+mod day_6;
 
 fn print_results(title: &str, run: fn()) {
     println!("========================================================================");
@@ -35,6 +36,7 @@ fn main() {
         ("4", "2") => print_results("Day 4 - Passport Processing - Part 2", day_4::passport_processing_part_2::run),
         ("5", "1") => print_results("Day 5 - Binary Boarding - Part 1", day_5::binary_boarding_part_1::run),
         ("5", "2") => print_results("Day 5 - Binary Boarding - Part 2", day_5::binary_boarding_part_2::run),
+        ("6", "1") => print_results("Day 6 - Custom Customs - Part 1", day_6::custom_customs_day_1::run),
         (_, _) => println!("The specified case (day {}, part {}) doesn't exist.", day, part)
     }
 }
