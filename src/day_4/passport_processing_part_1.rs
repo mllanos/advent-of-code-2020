@@ -7,7 +7,7 @@ fn validate() {
     assert_eq!(algorithm("src/day_4/input_test.txt"), (4, 2));
 }
 
-fn algorithm(file_location: &str) -> (usize, isize) {
+fn algorithm(file_location: &str) -> (usize, usize) {
     let content = fs::read_to_string(file_location).unwrap();
     let delimiter = Regex::new("\n\\s+\n").unwrap();
     let passports: Vec<&str> = delimiter.split(&content).collect();
