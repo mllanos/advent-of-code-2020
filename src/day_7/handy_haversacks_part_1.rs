@@ -30,7 +30,6 @@ fn algorithm(file_location: &str) -> usize {
             possible_contained_bags = possible_contained_bags
                 .into_iter()
                 .flat_map(|bag| rules.get(bag).unwrap().to_vec())
-                .filter(|x| x != &"no other bag")
                 .collect::<Vec<_>>();
             if possible_contained_bags.is_empty() {
                 break;
