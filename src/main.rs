@@ -7,6 +7,7 @@ mod day_4;
 mod day_5;
 mod day_6;
 mod day_7;
+mod day_8;
 
 fn print_results(title: &str, run: fn()) {
     println!("========================================================================");
@@ -41,6 +42,7 @@ fn main() {
         ("6", "2") => print_results("Day 6 - Custom Customs - Part 2", day_6::custom_customs_day_2::run),
         ("7", "1") => print_results("Day 7 - Handy Haversacks - Part 1", day_7::handy_haversacks_part_1::run),
         ("7", "2") => print_results("Day 7 - Handy Haversacks - Part 2", day_7::handy_haversacks_part_2::run),
+        ("8", "1") => print_results("Day 8 - Handheld Halting - Part 1", day_8::handheld_halting_part_1::run),
         (_, _) => println!("The specified case (day {}, part {}) doesn't exist.", day, part)
     }
 }
