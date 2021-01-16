@@ -2,7 +2,7 @@ use std::fs;
 use std::str;
 
 #[test]
-fn validate_8_2() {
+fn validate_9_1() {
     assert_eq!(algorithm("src/day_9/input_test.txt", 5), 127);
 }
 

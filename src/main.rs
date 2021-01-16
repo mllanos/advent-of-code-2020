@@ -46,6 +46,7 @@ fn main() {
         ("8", "1") => print_results("Day 8 - Handheld Halting - Part 1", day_8::handheld_halting_part_1::run),
         ("8", "2") => print_results("Day 8 - Handheld Halting - Part 2", day_8::handheld_halting_part_2::run),
         ("9", "1") => print_results("Day 9 - Encoding Error - Part 1", day_9::encoding_error_day_1::run),
+        ("9", "2") => print_results("Day 9 - Encoding Error - Part 2", day_9::encoding_error_day_2::run),
         (_, _) => println!("The specified case (day {}, part {}) doesn't exist.", day, part)
     }
 }
