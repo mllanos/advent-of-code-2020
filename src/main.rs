@@ -43,6 +43,7 @@ fn main() {
         ("7", "1") => print_results("Day 7 - Handy Haversacks - Part 1", day_7::handy_haversacks_part_1::run),
         ("7", "2") => print_results("Day 7 - Handy Haversacks - Part 2", day_7::handy_haversacks_part_2::run),
         ("8", "1") => print_results("Day 8 - Handheld Halting - Part 1", day_8::handheld_halting_part_1::run),
+        ("8", "2") => print_results("Day 8 - Handheld Halting - Part 2", day_8::handheld_halting_part_2::run),
         (_, _) => println!("The specified case (day {}, part {}) doesn't exist.", day, part)
     }
 }
