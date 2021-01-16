@@ -68,7 +68,7 @@ fn algorithm(file_location: &str) -> i32 {
 
 pub fn run() {
     println!(
-        "The value of the accumulaotr after the program terminates is {}.",
+        "The value of the accumulator after the program terminates is {}.",
         algorithm("src/day_8/input.txt")
     );
 }
