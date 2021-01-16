@@ -1,10 +1,10 @@
-use std::fs;
-use std::str;
 use regex::Regex;
 use std::collections::HashMap;
+use std::fs;
+use std::str;
 
 #[test]
-fn validate() {
+fn validate_7_1() {
     assert_eq!(algorithm("src/day_7/input_test.txt"), 4);
 }
 
@@ -14,7 +14,9 @@ fn algorithm(file_location: &str) -> usize {
     let mut matches = 0;
     let mut rules: HashMap<&str, Vec<&str>> = HashMap::new();
     for line in content.lines() {
-        let mut bags: Vec<&str> = rule_delimiter.split(&line.trim_end_matches(".").trim_end_matches("s")).collect();
+        let mut bags: Vec<&str> = rule_delimiter
+            .split(&line.trim_end_matches(".").trim_end_matches("s"))
+            .collect();
         let first = bags.remove(0);
         rules.insert(first, bags);
     }
@@ -36,10 +38,12 @@ fn algorithm(file_location: &str) -> usize {
             }
         }
     }
-  
     matches
 }
 
 pub fn run() {
-    println!("The number of bag colors that can contain one shiny gold bag is {}.", algorithm("src/day_7/input.txt"));
+    println!(
+        "The number of bag colors that can contain one shiny gold bag is {}.",
+        algorithm("src/day_7/input.txt")
+    );
 }

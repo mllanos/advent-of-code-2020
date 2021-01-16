@@ -1,9 +1,9 @@
+use regex::Regex;
 use std::fs;
 use std::str;
-use regex::Regex;
 
 #[test]
-fn validate() {
+fn validate_4_1() {
     assert_eq!(algorithm("src/day_4/input_test.txt"), (4, 2));
 }
 

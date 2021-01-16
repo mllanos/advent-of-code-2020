@@ -26,9 +26,9 @@ fn algorithm(file_location: &str) -> i32 {
             "acc" => {
                 index = index + 1;
                 accumulator = accumulator + operand;
-            },
+            }
             "jmp" => index = index + operand,
-            _ => panic!("Invalid opcode.")
+            _ => panic!("Invalid opcode."),
         }
         if visited_indexes.contains(&index) {
             break;
@@ -39,5 +39,8 @@ fn algorithm(file_location: &str) -> i32 {
 }
 
 pub fn run() {
-    println!("The value in the accumulator is {}.", algorithm("src/day_8/input.txt"));
+    println!(
+        "The value in the accumulator is {}.",
+        algorithm("src/day_8/input.txt")
+    );
 }

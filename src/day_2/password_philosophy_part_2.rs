@@ -1,8 +1,8 @@
-use std::fs;
 use regex::Regex;
+use std::fs;
 
 #[test]
-fn validate() {
+fn validate_2_2() {
     assert_eq!(algorithm("src/day_2/input_test.txt"), (3, 1));
 }
 
@@ -17,19 +17,21 @@ fn algorithm(file_location: &str) -> (usize, usize) {
     let mut count = 0;
 
     for item in values.iter() {
-        let (min, max, letter, password) = (item[0], item[1], item[2].chars().next().unwrap(), item[3]);
+        let (min, max, letter, password) =
+            (item[0], item[1], item[2].chars().next().unwrap(), item[3]);
         let position_1: usize = min.parse().unwrap();
         let position_2: usize = max.parse().unwrap();
         if password.len() + 1 > position_2 {
             let char_pos_1 = password.chars().nth(position_1 - 1).unwrap();
             let char_pos_2 = password.chars().nth(position_2 - 1).unwrap();
-            
-            if (char_pos_1 == letter && char_pos_2 != letter) || (char_pos_1 != letter && char_pos_2 == letter) {
+
+            if (char_pos_1 == letter && char_pos_2 != letter)
+                || (char_pos_1 != letter && char_pos_2 == letter)
+            {
                 count = count + 1;
             }
         }
     }
-    
     (values.len(), count)
 }
 

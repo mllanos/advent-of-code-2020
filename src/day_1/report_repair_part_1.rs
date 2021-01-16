@@ -1,7 +1,7 @@
 use std::fs;
 
 #[test]
-fn validate() {
+fn validate_1_1() {
     assert_eq!(algorithm("src/day_1/input_test.txt", false).0, 514579);
 }
 
@@ -12,7 +12,7 @@ fn algorithm(file_location: &str, print_results: bool) -> (i32, usize) {
     let mut result = 0;
     for (i, x) in values.iter().enumerate() {
         let a: i32 = x.parse().unwrap();
-        for y in values.clone().drain(i+1..values.len()) {
+        for y in values.clone().drain(i + 1..values.len()) {
             count = count + 1;
             let b: i32 = y.parse().unwrap();
             if a + b == 2020 {

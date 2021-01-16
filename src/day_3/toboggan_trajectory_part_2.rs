@@ -11,7 +11,7 @@ fn algorithm(file_location: &str, print_results: bool) -> u64 {
     let max_cols = values.first().unwrap().len();
     let max_rows = values.len() - 1;
     let mut total: u64 = 1;
-    let slope_strategies = [(1,1), (3,1), (5,1), (7,1), (1,2)];
+    let slope_strategies = [(1, 1), (3, 1), (5, 1), (7, 1), (1, 2)];
 
     for (right, down) in slope_strategies.iter() {
         let mut curr_row = 0;
@@ -40,10 +40,12 @@ fn algorithm(file_location: &str, print_results: bool) -> u64 {
             println!("Right {}, down {}: we hit {} trees.", right, down, count);
         }
     }
-    
     total
 }
 
 pub fn run() {
-    println!("Multiplying all the values gives us {}.", algorithm("src/day_3/input.txt", true));
+    println!(
+        "Multiplying all the values gives us {}.",
+        algorithm("src/day_3/input.txt", true)
+    );
 }

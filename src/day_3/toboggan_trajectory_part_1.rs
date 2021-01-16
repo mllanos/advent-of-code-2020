@@ -1,7 +1,7 @@
 use std::fs;
 
 #[test]
-fn validate() {
+fn validate_3_1() {
     assert_eq!(algorithm("src/day_3/input_test.txt"), 7);
 }
 
@@ -19,10 +19,12 @@ fn algorithm(file_location: &str) -> usize {
         }
         curr_col = (curr_col + 3) % max_cols;
     }
-    
     count
 }
 
 pub fn run() {
-    println!("Right 3, down 1: we hit {} trees.", algorithm("src/day_3/input.txt"));
+    println!(
+        "Right 3, down 1: we hit {} trees.",
+        algorithm("src/day_3/input.txt")
+    );
 }
