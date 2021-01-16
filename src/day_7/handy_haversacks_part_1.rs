@@ -36,7 +36,6 @@ fn algorithm(file_location: &str) -> usize {
             }
         }
     }
-
   
     matches
 }
